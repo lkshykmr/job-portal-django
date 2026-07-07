@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="card">
+
+    <div class="card-body">
+
+        <h2>
+            {{ job.title }}
+        </h2>
+
+        <hr>
+
+        <p>
+            <strong>Company:</strong>
+            {{ job.company_name }}
+        </p>
+
+        <p>
+            <strong>Qualification:</strong>
+            {{ job.qualification }}
+        </p>
+
+        <p>
+            <strong>Skills:</strong>
+            {{ job.skills }}
+        </p>
+
+        <p>
+            <strong>Experience:</strong>
+            {{ job.experience }}
+        </p>
+
+        <p>
+            <strong>Location:</strong>
+            {{ job.location }}
+        </p>
+
+        <p>
+            <strong>Salary:</strong>
+            ₹{{ job.salary }}
+        </p>
+
+        <p>
+            <strong>Description:</strong>
+        </p>
+
+        <p>
+            {{ job.description }}
+        </p>
+
+        <a
+            href="/job/{{ job.id }}/apply/"
+            class="btn btn-success">
+
+            Apply Now
+
+        </a>
+        <a href="{% url 'saved_job' job.id %}" class="btn btn-outline-primary">
+            Save this Job
+        </a>
+    </div>
+
+</div>
+
+{% endblock %}
